@@ -18,51 +18,75 @@
       background-image: linear-gradient(rgba(79,110,247,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(79,110,247,0.04) 1px, transparent 1px);
       background-size: 48px 48px; pointer-events: none; z-index: 0;
     }
-    .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
+    /* BACK */
     .back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--muted2); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
     .back:hover { color: var(--accent); }
 
+    /* HEADER */
     .app-header { margin-bottom: 2.5rem; animation: fadeUp 0.6s ease forwards; }
     .app-label { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.8rem; }
     .app-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; letter-spacing: -0.02em; }
     .app-header h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .app-header .meta { margin-top: 0.8rem; font-size: 0.75rem; color: var(--muted2); }
+    .meta { margin-top: 0.8rem; font-size: 0.75rem; color: var(--muted2); display: flex; flex-wrap: wrap; gap: 1rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
 
     .divider { height: 1px; background: var(--border); margin: 2rem 0; }
 
-    .section { margin-bottom: 2rem; animation: fadeUp 0.6s ease forwards; opacity: 0; }
-    .section:nth-child(1) { animation-delay: 0.1s; }
-    .section:nth-child(2) { animation-delay: 0.15s; }
-    .section:nth-child(3) { animation-delay: 0.2s; }
-    .section:nth-child(4) { animation-delay: 0.25s; }
-    .section:nth-child(5) { animation-delay: 0.3s; }
-    .section:nth-child(6) { animation-delay: 0.35s; }
-    .section:nth-child(7) { animation-delay: 0.4s; }
-    .section:nth-child(8) { animation-delay: 0.45s; }
+    /* SECTIONS */
+    .section { margin-bottom: 2rem; animation: fadeUp 0.5s ease forwards; opacity: 0; }
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
 
-    .section-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--text); }
-
-    .placeholder-block {
-      background: var(--card); border: 1px dashed var(--border);
-      border-radius: 12px; padding: 1.2rem 1.5rem;
-      font-size: 0.78rem; color: var(--muted); line-height: 1.7;
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
+      margin-bottom: 0.9rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.7rem;
     }
-    .todo {
-      display: inline-block; font-size: 0.65rem; padding: 0.15rem 0.6rem;
-      border-radius: 999px; background: rgba(79,110,247,0.12);
-      color: var(--accent); border: 1px solid rgba(79,110,247,0.3);
-      margin-bottom: 0.6rem; letter-spacing: 0.05em;
+    .section-num {
+      font-size: 0.65rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+      background: rgba(79,110,247,0.12); color: var(--accent);
+      border: 1px solid rgba(79,110,247,0.25); font-family: 'DM Mono', monospace;
     }
 
-    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; font-size: 0.78rem; color: var(--muted2); line-height: 1.8; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.5rem; font-size: 0.78rem; color: var(--muted2); line-height: 1.8; }
+    .card p { margin-bottom: 0.7rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--text); font-weight: 600; }
+    .card a { color: var(--accent); text-decoration: none; }
+    .card a:hover { text-decoration: underline; }
+
+    .card ul { margin: 0.5rem 0 0.7rem 1.2rem; }
+    .card ul li { margin-bottom: 0.4rem; }
+    .card ul li::marker { color: var(--accent2); }
+
+    /* highlight note */
+    .note {
+      background: rgba(127,223,184,0.07); border: 1px solid rgba(127,223,184,0.2);
+      border-radius: 10px; padding: 0.8rem 1.1rem;
+      font-size: 0.75rem; color: var(--accent2); margin-top: 0.8rem; line-height: 1.6;
+    }
+
+    /* contact card */
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.5rem; font-size: 0.8rem; color: var(--muted2); line-height: 2; }
+    .contact-card strong { color: var(--text); }
     .contact-card a { color: var(--accent); text-decoration: none; }
     .contact-card a:hover { text-decoration: underline; }
 
     footer { margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
     footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 500px) { .meta { flex-direction: column; gap: 0.4rem; } }
   </style>
 </head>
 <body>
@@ -73,78 +97,100 @@
   <div class="app-header">
     <p class="app-label">// Privacy Policy</p>
     <h1><span>VALTO</span></h1>
-    <p class="meta">Last updated: — &nbsp;·&nbsp; Effective date: —</p>
+    <div class="meta">
+      <span class="meta-item"><span class="meta-dot"></span> App: Valto</span>
+      <span class="meta-item"><span class="meta-dot"></span> Last updated: May 30, 2026</span>
+      <span class="meta-item"><span class="meta-dot"></span> Effective: May 30, 2026</span>
+    </div>
   </div>
 
   <div class="divider"></div>
 
+  <div class="card" style="margin-bottom:2rem; animation: fadeUp 0.5s ease forwards; opacity:0;">
+    This Privacy Policy describes how the Valto application ("we", "our", or "the app") handles information when you use it. We are committed to protecting your privacy. This document explains what data the app accesses, how it is used, and your rights.
+  </div>
+
   <div class="section">
-    <h2 class="section-title">1. Introduction</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      Describe the app briefly and state that this Privacy Policy explains how user data is handled.
+    <h2 class="section-title"><span class="section-num">01</span> Information We Do Not Collect</h2>
+    <div class="card">
+      <p>Valto does <strong>not</strong> collect, store, or transmit any personally identifiable information. Specifically:</p>
+      <ul>
+        <li>No name, email address, or account credentials</li>
+        <li>No device identifiers (IMEI, advertising ID, etc.)</li>
+        <li>No location data</li>
+        <li>No camera or microphone access</li>
+        <li>No contacts or calendar data</li>
+        <li>No usage analytics or crash reporting sent to us</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">2. Information We Collect</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      List what data the app collects: personal info, usage data, device info, etc.
+    <h2 class="section-title"><span class="section-num">02</span> Data Stored Locally on Your Device</h2>
+    <div class="card">
+      <p>The app stores the following data exclusively on your device:</p>
+      <ul>
+        <li><strong>User preference</strong> — your selected base currency (e.g., RUB). Saved via Android DataStore and never leaves the device.</li>
+        <li><strong>Cached exchange rates</strong> — recent rate data saved in a local Room database to allow offline viewing and reduce redundant network requests. This data contains only publicly available financial figures (currency codes, rates, and dates) — no personal information.</li>
+      </ul>
+      <div class="note">
+        You can clear this data at any time through your device's app settings:<br>
+        Settings → Apps → Valto → Clear Data
+      </div>
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">3. How We Use Your Information</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      Explain the purpose of data collection: app functionality, analytics, improvements, etc.
+    <h2 class="section-title"><span class="section-num">03</span> Network Requests & Third-Party Data Sources</h2>
+    <div class="card">
+      <p>To display exchange rates, the app fetches publicly available financial data from the following third-party services:</p>
+      <ul>
+        <li><strong>Frankfurter API</strong> (<a href="https://api.frankfurter.app" target="_blank">api.frankfurter.app</a>) — a free, open-source currency data service backed by the European Central Bank. No personal data is sent in these requests.</li>
+        <li><strong>Central Bank of Russia (CBR)</strong> (<a href="https://www.cbr.ru" target="_blank">cbr.ru</a>) — official daily and historical exchange rate data for the Russian Ruble. No personal data is sent in these requests.</li>
+      </ul>
+      <p>These requests contain only the parameters needed to retrieve rate data (currency codes, date ranges). Your IP address may be visible to these services as part of standard internet communication; please refer to their own privacy policies for details.</p>
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">4. Data Storage & Security</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      Describe where data is stored, how it is protected and for how long it is retained.
+    <h2 class="section-title"><span class="section-num">04</span> No Third-Party Advertising or Analytics</h2>
+    <div class="card">
+      Valto does not integrate any advertising networks, analytics SDKs (e.g., Firebase, Google Analytics, Crashlytics), or social media trackers. No data is shared with any third party beyond the network requests described in Section 03.
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">5. Third-Party Services</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      List any third-party SDKs used: Firebase, AdMob, Google Analytics, etc.
+    <h2 class="section-title"><span class="section-num">05</span> Android Permissions</h2>
+    <div class="card">
+      The app requires no special Android permissions. Internet connectivity is used solely to fetch publicly available exchange rate data as described above.
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">6. User Rights</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      Explain user rights: access, correction, deletion of personal data.
+    <h2 class="section-title"><span class="section-num">06</span> Children's Privacy</h2>
+    <div class="card">
+      Valto does not knowingly collect any information from children under the age of 13. The app contains no content directed at children and collects no personal data from any user.
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">7. Changes to This Policy</h2>
-    <div class="placeholder-block">
-      <span class="todo">TODO</span><br>
-      State that the policy may be updated and how users will be notified.
+    <h2 class="section-title"><span class="section-num">07</span> Changes to This Policy</h2>
+    <div class="card">
+      We may update this Privacy Policy from time to time. Any changes will be reflected by an updated "Last updated" date at the top of this page. Continued use of the app after changes are posted constitutes acceptance of those changes.
     </div>
   </div>
 
   <div class="section">
-    <h2 class="section-title">8. Contact Us</h2>
+    <h2 class="section-title"><span class="section-num">08</span> Contact</h2>
     <div class="contact-card">
-      If you have any questions about this Privacy Policy, contact us at:<br><br>
+      If you have any questions or concerns about this Privacy Policy, please contact us:<br><br>
       <strong>Timur Ivanov · Tivan Game Studio</strong><br>
       <a href="mailto:review4coolgames@gmail.com">review4coolgames@gmail.com</a>
     </div>
   </div>
 
   <footer>
-    <span>© 2026 Tivan Game Studio</span>
+    <span>© 2026 Tivan Game Studio · Valto</span>
     <a href="../../">← Portfolio</a>
   </footer>
 
